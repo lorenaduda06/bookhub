@@ -4,37 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
     <title>Bookhub</title>
+</head>
+<body>
     <header>
-        <h1>Bem vindo(a) ao Bookhub</h1>
+        <h1>Bookhub</h1>
         <nav id="menu-header">
             <ul>
-                <li><a href="">Romance</a></li>
-                <li><a href="">Thriller</a></li>
-                <li><a href="">Ficção científica</a></li>
+                <li><a href="#livros-romance">Romance</a></li>
+                <li><a href="#livros-thriller">Thriller</a></li>
+                <li><a href="#livros-fantasia">Fantasia</a></li>
+                <li><a href="#" id="link-minha-area">Minha área</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <p><a href="cadastro.html" target="_blank">Cadastre-se aqui</a></p>
+        <p><a href="cadastro.html" target="_blank" id="link-cad">Cadastre-se aqui</a></p>
+        <div id="livros-romance">
+            <figure class="livro">
+                <img src="img/bridgerton3.png" alt="Um Perfeito Cavalheiro" class="capa-livro">
+                <figcaption>Autor(a): Julia Quinn</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="1">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="1">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/outlander1.png" alt="A Viajante do Tempo" class="capa-livro">
+                <figcaption>Autor(a): Diana Gabaldon</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="2">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="2">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/amoprecordar.png" alt="Um Amor para Recordar" class="capa-livro">
+                <figcaption>Autor(a): Nicholas Sparks</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="3">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="3">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/overao1.png "alt="O Verão que Mudou a Minha Vida" class="capa-livro">
+                <figcaption>Autor(a): Jenny Han</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="4">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="4">Minha área</button>
+                </div>
+            </figure>
+        </div>
+
+        <div id="livros-thriller">
+            <figure class="livro">
+                <img src="img/it.png" alt="It a Coisa" class="capa-livro">
+                <figcaption>Autor(a): Stephen King</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="5">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="5">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/iluminado.png" alt="O Iluminado" class="capa-livro">
+                <figcaption>Autor(a): Stephen King</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="6">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="6">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/verity.png" alt="Verity" class="capa-livro">
+                <figcaption>Autor(a): Colleen Hoover</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="7">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="7">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/nov63.png" alt="Novembro de 63" class="capa-livro">
+                <figcaption>Autor(a): Stephen King</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="8">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="8">Minha área</button>
+                </div>
+            </figure>
+        </div>
+
+        <div id="livros-fantasia">
+            <figure class="livro">
+                <img src="img/princemar.png" alt="Príncipe do Mar" class="capa-livro">
+                <figcaption>Autor(a): Linsey Miller</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="9">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="9">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/asasreluz.png" alt="Asas Reluzentes" class="capa-livro">
+                <figcaption>Autor(a): Allison Saft</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="10">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="10">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/harry1.png" alt="Harry Potter e a Pedra Filosofal" class="capa-livro">
+                <figcaption>Autor(a): J. K. Rowling</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="11">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="11">Minha área</button>
+                </div>
+            </figure>
+
+            <figure class="livro">
+                <img src="img/sraneis.png" alt="O Senhor dos Anéis" class="capa-livro">
+                <figcaption>Autor(a): J. R. R. Tolkien</figcaption>
+                <div class="bt-livro">
+                    <button class="bt-lista-lido" type="button" data-livro="12">Já lido</button>
+                    <button class="bt-lista-desejo" type="button" data-livro="12">Minha área</button>
+                </div>
+            </figure>
+        </div>
     </main>
 
     <footer>
         <nav id="menu-footer">
             <ul>
-                <li><a href="">Romance</a></li>
-                <li><a href="">Thriller</a></li>
-                <li><a href="">Ficção científica</a></li>
+                <li><a href="#livros-romance">Romance</a></li>
+                <li><a href="#livros-thriller">Thriller</a></li>
+                <li><a href="#livros-fantasia">Fantasia</a></li>
             </ul>
         </nav>
 
-        <p>Copyright 2026</p>
-        <p>frase de livro</p>
+        <p>© 2026 Bookhub. Todos os direitos resevados. As imagens de capas dos livros são de propriedade de seus respectivos autores e são utilizadas aqui para fins ilustrativos</p>
+        <p>"Ela deu um passo para frente e ele soube que sua vida havia sido mudada para sempre" - Um Perfeito Cavalheiro</p>
         <p>Desenvolvido por: Lorena Eduarda</p>
     </footer>
-</head>
-<body>
     
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,27 +1,36 @@
-POST http://localhost:3002/bookhub
+POST http://localhost:3002/cadastro
 Content-Type: application/json
 
 {
-    "email": "clairefraser@email.com",
-    "username": "claire_fraser",
-    "senha": "frasersRidge"
+    "email":
+    "username": 
+    "senha":
 }
 
 ###
 
-GET http://localhost:3002/bookhub?search=claire_beauchamp
-
-###
-
-PUT http://localhost:3002/bookhub/c5bc3637-9ecd-4c84-be83-f5b64b904c35
+POST http://localhost:3002/login
 Content-Type: application/json
 
 {
-    "email": "clairebeuchamp@email.com",
-    "username": "claire_beuchamp",
-    "senha": "claireandjamie"
+    "username":
+    "senha":
 }
 
 ###
 
-DELETE http://localhost:3002/bookhub/c5bc3637-9ecd-4c84-be83-f5b64b904c35
+GET http://localhost:3002/bookhub?search=conrad
+
+###
+
+PUT http://localhost:3002/atualizacao/
+Content-Type: application/json
+
+{
+    "username": 
+    "senha":
+}
+
+###
+
+DELETE http://localhost:3002/exclusao/

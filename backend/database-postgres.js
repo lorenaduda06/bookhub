@@ -9,54 +9,82 @@ export class DatabasePostgres {
         await sql`INSERT INTO cadastro (id, email, username, senha) VALUES (${cadId}, ${email}, ${username}, ${senha})`;
     }
 
-    async login(user) {
-        let loginUser;
+    async autenticarLogin(username) {
+        const autenticacao = await sql`SELECT id, email, username, senha FROM cadastro WHERE LOWER(username) = LOWER(${username})`;
 
-        const { username, senha } = user;
-
-        loginUser = await sql`SELECT email, username, senha FROM cadastro WHERE username = ${username}`;
-
-        if (loginUser.rowCount > 0) {
-            return loginUser.rows[0];
-        }
-        else {
-            return null;
-        }
+        const resultado = (autenticacao.length > 0) ? autenticacao[0] : null;
+        return resultado;
     }
 
-    async list(search) {
-        let cadastro;
+    async dadosUsuario(id) {
+        const loginUser = await sql`SELECT id, email, username FROM cadastro WHERE id = ${id}`;
 
-        if (search) {
-            cadastro = await sql`SELECT username FROM cadastro WHERE username iLike ${'%' + search + '%'}`;
-        }
-        else {
-            cadastro = await sql`SELECT username FROM cadastro`;
-        }
-        return cadastro;
+        const resultado = (loginUser.length > 0) ? loginUser[0] : null;
+        return resultado;
+    }
+
+    async validarSenha(id) {
+        const resultado = await sql`SELECT senha FROM cadastro WHERE id = ${id}`;
+
+        return (resultado.length > 0) ? resultado[0] : null;
     }
 
     async update(id, user) {
-        let updateUser;
+        const { newSenha, newUsername } = user;
 
-        const { username, senha } = user;
-        
-        updateUser = await sql`UPDATE cadastro SET username = ${username}, senha = ${senha} WHERE id = ${id}`;
+        if (newUsername && newSenha) {
+            const updateUser = await sql`UPDATE cadastro SET username = ${newUsername}, senha = ${newSenha} WHERE id = ${id}`;
 
-        if (updateUser.rowCount > 0) {
-            return 1;
+            return updateUser.rowCount;
+        }
+
+        if (newUsername) {
+            const updateUser = await sql`UPDATE cadastro SET username = ${newUsername} WHERE id = ${id}`;
+
+            return updateUser.rowCount;
+        }
+
+        if (newSenha) {
+            const updateUser = await sql`UPDATE cadastro SET senha = ${newSenha} WHERE id = ${id}`;
+
+            return updateUser.rowCount;
         }
         return 0;
     }
 
     async delete(id) {
-        let deleteUser;
+        await sql`DELETE FROM user_livros WHERE user_id = ${id}`;
+        
+        const resultado = await sql`DELETE FROM cadastro WHERE id = ${id}`;
+        return resultado.rowCount;
+    }
 
-        deleteUser = await sql`DELETE FROM cadastro WHERE id = ${id}`;
+    // MINHA ÁREA
+    async listBooksByUser(userId) {
+        const resultado = await sql`
+            SELECT l.id, l.titulo, l.autor, l.capa_url, lu.status_livro FROM livros AS l
+            JOIN user_livros AS lu ON l.id = lu.livro_id
+            WHERE lu.user_id = ${userId}
+        `;
+        return resultado;
+    }
 
-        if (deleteUser.rowCount > 0) {
-            return 1;
-        }
-        return 0;
+    async bookAlreadyExists(userId, livroId) {
+        const userArea = await sql `SELECT * FROM user_livros WHERE user_id = ${userId} AND livro_id = ${livroId}`;
+
+        const resultado = (userArea.length) ? userArea[0] : null;
+        return resultado;
+    }
+
+    async addBook(userId, livroId, statusLivro) {
+        await sql`INSERT INTO user_livros (user_id, livro_id, status_livro) VALUES (${userId}, ${Number(livroId)}, ${statusLivro})`;
+    }
+
+    async statusUpdate(userId, livroId, statusLivro) {
+        await sql`UPDATE user_livros SET status_livro = ${statusLivro} WHERE user_id = ${userId} AND livro_id = ${livroId}`;
+    }
+
+    async removeBook(userId, livroId) {
+        await sql`DELETE FROM user_livros WHERE user_id = ${userId} AND livro_id = ${livroId}`;
     }
 }

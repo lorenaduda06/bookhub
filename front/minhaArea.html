@@ -5,40 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="img/icon.png">
-    <title>Cadastro | Bookhub</title>
+    <title>Minha Biblioteca | Bookhub</title>
 </head>
 <body>
     <header>
-        <h1>Bem vindo(a) ao Bookhub</h1>
+        <h1>Minha Biblioteca</h1>
         <nav id="menu-header">
             <ul>
                 <li><a href="index.html">Romance</a></li>
                 <li><a href="index.html">Thriller</a></li>
                 <li><a href="index.html">Fantasia</a></li>
-                <li><a href="login.html">Minha área</a></li>
+                <li><a href="#" id="link-minha-area">Minha área</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="container-cad">
-        <form id="form-cad">
-            <label for="email">Email:</label>
-            <input type="text" id="email-cad">
-            <label for="username">Nome de usuário:</label>
-            <input type="username" id="username-cad">
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha-cad">
+    <main id="container-minha-area">
+        <a href="login.html" id="link-dados">Clique para verificar <span>seus dados</span></a>
 
-            <button id="bt-cad" type="button">Cadastrar</button>
-            <p class="link-login">Já tem conta?<a class="link-login" href="login.html"> Faça seu login</a></p>
-        </form>
+        <section id="container-finalizados">
+            <h2>Leituras Finalizadas</h2>
+            <ul id="lista-finalizados"></ul>
+        </section>
 
-        <div id="divisorCad"></div>
+        <div id="divisorArea"></div>
 
-        <aside id="cont-sec">
-            <h2>“Não há destino sem escolhas, e não há escolhas sem coragem.”</h2>
-            <h3>- A Viajante do Tempo</h3>
-        </aside>
+        <section id="container-desejados">
+            <h2>Próximas Leituras</h2>
+            <ul id="lista-desejos"></ul>
+        </section>
     </main>
 
     <footer>
@@ -50,11 +45,10 @@
             </ul>
         </nav>
 
-        <p>© 2026 Bookhub. Todos os direitos resevados.</p>
+        <p>© 2026 Bookhub. Todos os direitos resevados. As imagens de capas dos livros são de propriedade de seus respectivos autores e são utilizadas aqui para fins ilustrativos</p>
         <p>"Ela deu um passo para frente e ele soube que sua vida havia sido mudada para sempre" - Um Perfeito Cavalheiro</p>
         <p>Desenvolvido por: Lorena Eduarda</p>
     </footer>
-
-    <script src="cadastro.js"></script>
+    <script src="minhaArea.js"></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <title>Login | Bookhub</title>
+</head>
+<body>
+    <header>
+        <h1>Bookhub</h1>
+        <nav id="menu-header">
+            <ul>
+                <li><a href="index.html">Romance</a></li>
+                <li><a href="index.html">Thriller</a></li>
+                <li><a href="index.html">Fantasia</a></li>
+                <li><a href="#" id="link-minha-area">Minha área</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="container-login">
+        <form id="form-login">
+            <div class="campo-form-login">
+                <label for="username">Username</label>
+                <input type="text" id="username-login">
+            </div>
+
+            <div class="campo-form-login">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha-login">
+            </div>
+
+            <button id="bt-login" type="submit">Entrar</button>
+        </form>
+
+        <div id="user-logado">
+
+            <div id="container-dados">
+                <div id="dados-user"></div>
+                <div id="bt-dados">
+                    <button id="bt-excluir" type="button">Excluir perfil</button>
+                    <button id="bt-logout" type="button">Sair</button>
+                </div>
+            </div>
+
+            <div id="divisorLogin"></div>
+
+            <div id="container-update">
+                <h3>Editar dados</h3>
+                <form id="form-editar">
+                    <div class="campo-form-logado">
+                        <label for="new-username">Novo username:</label>
+                        <input type="text" id="new-username">
+                    </div>
+
+                    <div class="campo-form-logado">
+                        <label for="old-senha">Senha antiga:</label>
+                        <input type="password" id="old-senha" required>
+                    </div>
+
+                    <div class="campo-form-logado">
+                        <label for="new-senha">Nova senha:</label>
+                        <input type="password" id="new-senha">
+                    </div>
+                    <button id="bt-editar" type="button">Editar dados</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav id="menu-footer">
+            <ul>
+                <li><a href="index.html">Romance</a></li>
+                <li><a href="index.html">Thriller</a></li>
+                <li><a href="index.html">Fantasia</a></li>
+            </ul>
+        </nav>
+
+        <p>© 2026 Bookhub. Todos os direitos resevados.</p>
+        <p>"Ela deu um passo para frente e ele soube que sua vida havia sido mudada para sempre" - Um Perfeito Cavalheiro</p>
+        <p>Desenvolvido por: Lorena Eduarda</p>
+    </footer>
+    <script src="login.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
