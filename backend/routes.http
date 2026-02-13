@@ -1,0 +1,27 @@
+POST http://localhost:3002/bookhub
+Content-Type: application/json
+
+{
+    "email": "clairefraser@email.com",
+    "username": "claire_fraser",
+    "senha": "frasersRidge"
+}
+
+###
+
+GET http://localhost:3002/bookhub?search=claire_beauchamp
+
+###
+
+PUT http://localhost:3002/bookhub/c5bc3637-9ecd-4c84-be83-f5b64b904c35
+Content-Type: application/json
+
+{
+    "email": "clairebeuchamp@email.com",
+    "username": "claire_beuchamp",
+    "senha": "claireandjamie"
+}
+
+###
+
+DELETE http://localhost:3002/bookhub/c5bc3637-9ecd-4c84-be83-f5b64b904c35
