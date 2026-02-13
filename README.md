@@ -21,4 +21,7 @@
 ### Backend
 - Node.js
 - Fastify
-- PostgresSQL
+- PostgreSQL
+
+⚓ Observação:
+Este projeto tem backend (Node.js) e banco de dados (PostgreSQL), portanto não funciona via GitHub Pages
